@@ -17,6 +17,7 @@ namespace Com.Danliris.Service.Finishing.Printing.Lib.ViewModels.CostCalculation
         public CostCalculationViewModel(CostCalculationModel costCalculation, List<CostCalculationMachineModel> costCalculationMachines, List<CostCalculationChemicalModel> costCalculationChemicals)
         {
             Id = costCalculation.Id;
+            ProductionOrderId = costCalculation.ProductionOrderId;
             InstructionId = costCalculation.InstructionId;
             PreparationValue = costCalculation.PreparationValue;
             CurrencyRate = costCalculation.CurrencyRate;
@@ -29,6 +30,7 @@ namespace Com.Danliris.Service.Finishing.Printing.Lib.ViewModels.CostCalculation
             CargoCost = costCalculation.CargoCost;
             InsuranceCost = costCalculation.InsuranceCost;
             Remark = costCalculation.Remark;
+            Date = costCalculation.Date;
 
             Machines = costCalculationMachines.Select(entity => new CostCalculationMachineViewModel(entity, costCalculationChemicals)).ToList();
         }
